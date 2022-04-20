@@ -15,17 +15,11 @@ class ProductViewSet(ModelViewSet):
     search_fields = ['title', 'description']
     pagination_class = PageNumberPagination
 
-# class UserFilter(SearchFilter):
-#     search_param = 'products'
-#
-#     def get_search_fields(self, view, request):
-#         return ['products__title', 'products__description', 'products']
 
 class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
     serializer_class = StockSerializer
     filter_backends = [DjangoFilterBackend,]
-    filterset_fields = ['products__title']
-    # filterset_class = UserFilter
+    filterset_fields = ['products']
     pagination_class = PageNumberPagination
 
