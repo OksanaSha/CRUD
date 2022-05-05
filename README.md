@@ -1,9 +1,4 @@
-# CRUD
 
-Необходимо выполнить и предоставить на проверку задачу:
+docker build -t crud .
 
-[Склады и товары](./stocks_products)
-
-Работа должна соответствовать принятому [стилю оформления кода](https://github.com/netology-code/codestyle/tree/master/python).
-
-Любые вопросы по решению задач задавайте в чате учебной группы.
+docker run --name=crud_run -p 8000:8000 -d crud
